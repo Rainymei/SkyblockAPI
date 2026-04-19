@@ -12,6 +12,6 @@ enum class Spray {
     JELLY,
     ;
 
-    val displayName: Component by lazy { RepoItemsAPI.getItemName(name) }
-    val itemStack by RepoItemsAPI.getItemLazy(name)
+    val itemStack by lazy { RepoItemsAPI.getItemStackOrDefault(name) }
+    val displayName: Component by lazy { itemStack.hoverName }
 }

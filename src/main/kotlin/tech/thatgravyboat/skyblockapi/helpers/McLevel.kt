@@ -25,8 +25,8 @@ object McLevel {
     //?} else {
     /*@Suppress("DEPRECATION_ERROR")
     @Deprecated(level = DeprecationLevel.WARNING, message = "Returns an unsafe value, will return a nullable ClientLevel in the next minecraft version!")
-    val self: Level
-        get() = level
+    val self: ClientLevel?
+        get() = McClient.self.level
     *///? }
 
     val selfOrNull: ClientLevel?
@@ -34,8 +34,8 @@ object McLevel {
 
     //? if < 26.1 {
     /*@Deprecated(level = DeprecationLevel.ERROR, message = "Returns an unsafe value, will be removed next minecraft version!")
-    val level: ClientLevel
-        get() = McClient.self.level!!
+    val level: ClientLevel?
+        get() = McClient.self.level
     *///? }
   
     val registry: RegistryAccess
